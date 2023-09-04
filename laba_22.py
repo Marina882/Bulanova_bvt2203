@@ -19,6 +19,7 @@ print("Минимальная температура:", data['main']['temp_min']
 print("Максимальная температура", data['main']['temp_max'])
 print("Скорость ветра:", data['wind']['speed'])
 print("Видимость:", data['visibility'])
+print("lalala")
 
 
 
@@ -27,15 +28,7 @@ res = requests.get("http://api.openweathermap.org/data/2.5/forecast",
 params={'q': s_city, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
 data = res.json()
 
-# выводим нужные нам значения
-print("")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("Прогноз погоды на неделю:")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-print('')
-for i in data['list']:
-    print("Дата <", i['dt_txt'], "> \r\nТемпература <", '{0:+3.0f}'.format(i['main']['temp']), "> \r\nПогодныеусловия <", i['weather'][0]['description'], "> \r\nСкорость ветра <", i['wind']['speed'], "> \r\nВидимость <", i['visibility'])
-    print("________")
+
 
 
 
